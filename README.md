@@ -3,6 +3,6 @@
 [![](https://img.shields.io/badge/Open_in_DevExpress_Support_Center-FF7200?style=flat-square&logo=DevExpress&logoColor=white)](https://supportcenter.devexpress.com/ticket/details/T973639)
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 <!-- default badges end -->
-# getting-started-with-floating-action-button-single-action
+# Getting Started with DevExtreme Floating Action Button - Single Action
 
 This repository stores the source code for the following tutorial: [Getting Started with Floating Action Button - Single Action](https://js.devexpress.com/Documentation/Guide/UI_Components/Floating_Action_Button/Getting_Started_with_Floating_Action_Button/#Single_Action).
