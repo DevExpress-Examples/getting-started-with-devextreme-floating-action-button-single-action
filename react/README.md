@@ -1,6 +1,6 @@
-# Getting Started with DevExtreme React Floating Action Button - Single Action
+# DevExtreme React Floating Action Button Single Action - Getting Started 
 
-This repository stores React source code for the following tutorial: [Getting Started with Floating Action Button - Single Action](https://js.devexpress.com/Documentation/Guide/UI_Components/Floating_Action_Button/Getting_Started_with_Floating_Action_Button/#Single_Action).
+This repository stores the code examples of the React Floating Action Button component for the [Getting Started with Floating Action Button - Single Action](https://js.devexpress.com/Documentation/Guide/UI_Components/Floating_Action_Button/Getting_Started_with_Floating_Action_Button/#Single_Action) tutorial. A single-action FAB represents the primary action of a screen.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
