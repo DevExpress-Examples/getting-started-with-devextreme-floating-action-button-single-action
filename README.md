@@ -8,19 +8,19 @@
 
 This repository stores the code examples of the Floating Action Button component for the [Getting Started with Floating Action Button - Single Action](https://js.devexpress.com/Documentation/Guide/UI_Components/Floating_Action_Button/Getting_Started_with_Floating_Action_Button/#Single_Action) tutorial. A single-action FAB represents the primary action of a screen.
 
-<div align="center"><img src="./actionbutton_singleaction.png" /></div>
+<div align="center"><img src="images/actionbutton_singleaction.png" /></div>
 
 ## Files to Review
 
 - **Angular**
-    - [app.component.html](angular/src/app/app.component.html)
-    - [app.component.ts](angular/src/app/app.component.ts)
+    - [app.component.html](Angular/src/app/app.component.html)
+    - [app.component.ts](Angular/src/app/app.component.ts)
 - **jQuery**
-    - [index.js](jquery/index.js)
+    - [index.js](jQuery/index.js)
 - **React**
-    - [App.js](react/src/App.js)
+    - [App.js](React/src/App.js)
 - **Vue**
-    - [App.vue](vue/src/App.vue)
+    - [App.vue](Vue/src/App.vue)
 
 ## Documentation
 
