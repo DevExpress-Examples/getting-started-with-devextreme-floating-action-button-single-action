@@ -1,16 +1,31 @@
-import { useCallback, useState } from 'react';
+import { useCallback } from 'react';
 import './App.css';
 import 'devextreme/dist/css/dx.material.blue.light.compact.css';
-import Button from 'devextreme-react/button';
+import SpeedDialAction from 'devextreme-react/speed-dial-action';
+import notify from 'devextreme/ui/notify';
+import type { SpeedDialActionTypes } from 'devextreme-react/speed-dial-action';
+import type { SpeedDialActionOptions } from './types';
 
 function App(): JSX.Element {
-  var [count, setCount] = useState<number>(0);
-  const clickHandler = useCallback(() => {
-    setCount((prev) => prev + 1);
-  }, [setCount]);
+  const speedDialActionOptions: SpeedDialActionOptions = {
+    label: 'Add',
+    icon: 'add',
+    index: 1,
+  };
+
+  const handleClick = useCallback((e: SpeedDialActionTypes.ClickEvent) => {
+    const label = e.component.option('label');
+    notify(`SpeedDialAction ${label} was clicked!`, 'success', 2000);
+  }, []);
+
   return (
-    <div className="main">
-      <Button text={`Click count: ${count}`} onClick={clickHandler} />
+    <div id="app-container">
+      <SpeedDialAction
+        label={speedDialActionOptions.label}
+        icon={speedDialActionOptions.icon}
+        index={speedDialActionOptions.index}
+        onClick={handleClick}
+      />
     </div>
   );
 }

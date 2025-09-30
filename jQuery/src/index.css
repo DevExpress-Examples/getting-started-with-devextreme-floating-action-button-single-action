@@ -1,4 +1,13 @@
-.demo-container {
-    margin: 50px;
-    width: 90vw;
+#app-container {
+  width: 900px;
+  position: relative;
+  padding: 20px;
+  border: 1px solid #ddd;
+  margin: 20px auto;
+}
+
+#floating-action-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
 }

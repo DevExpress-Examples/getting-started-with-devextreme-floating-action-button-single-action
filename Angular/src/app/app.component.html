@@ -1,3 +1,9 @@
-<div class="default-style">
-  <dx-button [text]="buttonText" (onClick)="onClick($event)"></dx-button>
+<div id="app-container">
+  <dx-speed-dial-action
+    [label]="speedDialActionOptions.label"
+    [icon]="speedDialActionOptions.icon"
+    [index]="speedDialActionOptions.index"
+    (onClick)="handleClick($event)"
+  >
+  </dx-speed-dial-action>
 </div>

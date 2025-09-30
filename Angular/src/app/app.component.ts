@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { ClickEvent } from 'devextreme/ui/button';
+import notify from 'devextreme/ui/notify';
+import { DxSpeedDialActionTypes } from 'devextreme-angular/ui/speed-dial-action';
+import { SpeedDialActionOptions } from './app.types';
 
 @Component({
   selector: 'app-root',
@@ -7,14 +9,13 @@ import { ClickEvent } from 'devextreme/ui/button';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'Angular';
+  speedDialActionOptions: SpeedDialActionOptions = {
+    label: 'Add',
+    icon: 'add',
+    index: 1,
+  };
 
-  counter = 0;
-
-  buttonText = 'Click count: 0';
-
-  onClick(e: ClickEvent): void {
-    this.counter++;
-    this.buttonText = `Click count: ${this.counter}`;
+  handleClick(e: DxSpeedDialActionTypes.ClickEvent): void {
+    notify('SpeedDialAction was clicked!', 'success', 2000);
   }
 }

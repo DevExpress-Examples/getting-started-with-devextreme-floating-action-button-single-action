@@ -1,10 +1,10 @@
 $(() => {
-  let count = 0;
-  $('#btn').dxButton({
-    text: `Click count: ${count}`,
-    onClick(e) {
-      count += 1;
-      e.component.option('text', `Click count: ${count}`);
+  const speedDialAction = $('#floating-action-button').dxSpeedDialAction({
+    label: 'Add',
+    icon: 'add',
+    index: 1,
+    onClick() {
+      DevExpress.ui.notify('SpeedDialAction was clicked!', 'success', 2000);
     },
-  });
+  }).dxSpeedDialAction('instance');
 });
