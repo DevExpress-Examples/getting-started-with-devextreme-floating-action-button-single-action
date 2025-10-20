@@ -1,33 +1,56 @@
-import { useCallback } from 'react';
+import React from 'react';
 import './App.css';
-import 'devextreme/dist/css/dx.material.blue.light.compact.css';
+import 'devextreme/dist/css/dx.material.blue.light.css';
 import SpeedDialAction from 'devextreme-react/speed-dial-action';
+import config from 'devextreme/core/config';
 import notify from 'devextreme/ui/notify';
-import type { SpeedDialActionTypes } from 'devextreme-react/speed-dial-action';
-import type { SpeedDialActionOptions } from './types';
 
-function App(): JSX.Element {
-  const speedDialActionOptions: SpeedDialActionOptions = {
-    label: 'Add',
-    icon: 'add',
-    index: 1,
-  };
+class App extends React.Component {
+  constructor(props: any) {
+    super(props);
+    config({
+      floatingActionButtonConfig: {
+        position: {
+          of: '#app-container',
+          my: 'right bottom',
+          at: 'right bottom',
+          offset: '-16 -16',
+        },
+      },
+    });
+  }
 
-  const handleClick = useCallback((e: SpeedDialActionTypes.ClickEvent) => {
-    const label = e.component.option('label');
-    notify(`SpeedDialAction ${label} was clicked!`, 'success', 2000);
-  }, []);
+  render(): JSX.Element {
+    return (
+      <div id="app-container">
+        <p>View&apos;s content</p>
+        <SpeedDialAction
+          hint="Edit"
+          icon="edit"
+          onClick={(): void => showNotification('Edit is clicked')}
+        />
+      </div>
+    );
+  }
+}
 
-  return (
-    <div id="app-container">
-      <SpeedDialAction
-        label={speedDialActionOptions.label}
-        icon={speedDialActionOptions.icon}
-        index={speedDialActionOptions.index}
-        onClick={handleClick}
-      />
-    </div>
+function showNotification(message: string): void {
+  notify(
+    {
+      message,
+      position: {
+        my: 'left bottom',
+        at: 'left bottom',
+        of: '#app-container',
+        offset: '16 -16',
+      },
+      minWidth: null,
+      width: 320 * 0.7,
+    },
+    'info',
+    1000,
   );
 }
 
 export default App;
+

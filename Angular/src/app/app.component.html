@@ -1,9 +1,10 @@
 <div id="app-container">
+  <p>View's content</p>
   <dx-speed-dial-action
-    [label]="speedDialActionOptions.label"
-    [icon]="speedDialActionOptions.icon"
-    [index]="speedDialActionOptions.index"
-    (onClick)="handleClick($event)"
+    hint="Edit"
+    icon="edit"
+    (onClick)="showNotification('Edit is clicked')"
   >
   </dx-speed-dial-action>
 </div>
+

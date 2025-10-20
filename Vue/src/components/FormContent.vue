@@ -1,38 +1,65 @@
 <script setup lang="ts">
 import DxSpeedDialAction from 'devextreme-vue/speed-dial-action';
+import config from 'devextreme/core/config';
 import notify from 'devextreme/ui/notify';
-import type { DxSpeedDialActionTypes } from 'devextreme-vue/speed-dial-action';
-import type { SpeedDialActionOptions } from '../types';
 
-const speedDialActionOptions: SpeedDialActionOptions = {
-  label: 'Add',
-  icon: 'add',
-  index: 1,
-};
+config({
+  floatingActionButtonConfig: {
+    position: {
+      my: 'right bottom',
+      at: 'right bottom',
+      of: '#app-container',
+      offset: '-16 -16',
+    },
+  },
+});
 
-const handleClick = (e: DxSpeedDialActionTypes.ClickEvent): void => {
-  const label = e.component.option('label');
-  notify(`SpeedDialAction \`${label}\` was clicked!`, 'success', 2000);
-};
+function showNotification(message: string): void {
+  notify(
+    {
+      message: message,
+      position: {
+        my: 'left bottom',
+        at: 'left bottom',
+        of: '#app-container',
+        offset: '16 -16',
+      },
+      minWidth: null,
+      width: 320 * 0.7,
+    },
+    'info',
+    1000
+  );
+}
 </script>
 
 <template>
-  <div id="app-container">
+  <div
+    id="app-container"
+    class="dx-widget"
+  >
+    <p>View's content</p>
     <DxSpeedDialAction
-      :label="speedDialActionOptions.label"
-      :icon="speedDialActionOptions.icon"
-      :index="speedDialActionOptions.index"
-      @click="handleClick"
+      hint="Edit"
+      icon="edit"
+      @click="showNotification('Edit is clicked')"
     />
   </div>
 </template>
 
 <style scoped>
+.dx-fa-button-icon {
+  text-align: center;
+}
+
 #app-container {
-  width: 900px;
-  position: relative;
-  padding: 20px;
-  border: 1px solid #ddd;
-  margin: 20px auto;
+  height: 360px;
+  width: 320px;
+  border: 1px solid rgb(221 221 221);
+}
+
+p {
+  font-size: 14px;
+  text-align: center;
 }
 </style>

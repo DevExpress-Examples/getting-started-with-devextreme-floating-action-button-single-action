@@ -1,10 +1,34 @@
 $(() => {
-  const speedDialAction = $('#floating-action-button').dxSpeedDialAction({
-    label: 'Add',
-    icon: 'add',
-    index: 1,
-    onClick() {
-      DevExpress.ui.notify('SpeedDialAction was clicked!', 'success', 2000);
+  const showNotification = function (message) {
+    DevExpress.ui.notify({
+      message,
+      position: {
+        my: 'left bottom',
+        at: 'left bottom',
+        of: '#app-container',
+        offset: '16 -16',
+      },
+      minWidth: null,
+      width: $('#app-container').width() * 0.7,
+    }, 'info', 1000);
+  };
+
+  DevExpress.config({
+    floatingActionButtonConfig: {
+      position: {
+        my: 'right bottom',
+        at: 'right bottom',
+        of: '#app-container',
+        offset: '-16 -16',
+      },
     },
-  }).dxSpeedDialAction('instance');
+  });
+
+  $('#action-edit').dxSpeedDialAction({
+    hint: 'Edit',
+    icon: 'edit',
+    onClick() {
+      showNotification('Edit is clicked');
+    },
+  });
 });

@@ -1,7 +1,17 @@
 import { Component } from '@angular/core';
 import notify from 'devextreme/ui/notify';
-import { DxSpeedDialActionTypes } from 'devextreme-angular/ui/speed-dial-action';
-import { SpeedDialActionOptions } from './app.types';
+import config from 'devextreme/core/config';
+
+config({
+  floatingActionButtonConfig: {
+    position: {
+      my: 'right bottom',
+      at: 'right bottom',
+      of: '#app-container',
+      offset: '-16 -16',
+    },
+  },
+});
 
 @Component({
   selector: 'app-root',
@@ -9,13 +19,23 @@ import { SpeedDialActionOptions } from './app.types';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  speedDialActionOptions: SpeedDialActionOptions = {
-    label: 'Add',
-    icon: 'add',
-    index: 1,
-  };
-
-  handleClick(e: DxSpeedDialActionTypes.ClickEvent): void {
-    notify('SpeedDialAction was clicked!', 'success', 2000);
+  showNotification(message: string): void {
+    notify(
+      {
+        message,
+        position: {
+          my: 'left bottom',
+          at: 'left bottom',
+          of: '#app-container',
+          offset: '16 -16',
+        },
+        minWidth: null,
+        width: 320 * 0.7,
+      },
+      'info',
+      1000,
+    );
   }
 }
+
+

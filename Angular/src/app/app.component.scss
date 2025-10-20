@@ -1,7 +1,15 @@
-#app-container {
-  width: 900px;
-  position: relative;
-  padding: 20px;
-  border: 1px solid #ddd;
-  margin: 20px auto;
+::ng-deep .dx-fa-button-icon {
+  text-align: center;
 }
+
+p {
+  font-size: 14px;
+  text-align: center;
+}
+
+#app-container {
+  height: 360px;
+  width: 320px;
+  border: 1px solid rgb(221 221 221);
+}
+
