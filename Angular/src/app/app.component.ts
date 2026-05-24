@@ -13,11 +13,13 @@ config({
   },
 });
 
+import { DxSpeedDialActionModule } from 'devextreme-angular/ui/speed-dial-action';
+
 @Component({
     selector: 'app-root',
+    imports: [DxSpeedDialActionModule],
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.scss'],
-    standalone: false
 })
 export class AppComponent {
   showNotification(message: string): void {
