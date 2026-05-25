@@ -5,6 +5,24 @@ import SpeedDialAction from 'devextreme-react/speed-dial-action';
 import config from 'devextreme/core/config';
 import notify from 'devextreme/ui/notify';
 
+function showNotification(message: string): void {
+  notify(
+    {
+      message,
+      position: {
+        my: 'left bottom',
+        at: 'left bottom',
+        of: '#app-container',
+        offset: '16 -16',
+      },
+      minWidth: null,
+      width: 320 * 0.7,
+    },
+    'info',
+    1000,
+  );
+}
+
 class App extends React.Component {
   constructor(props: any) {
     super(props);
@@ -34,23 +52,4 @@ class App extends React.Component {
   }
 }
 
-function showNotification(message: string): void {
-  notify(
-    {
-      message,
-      position: {
-        my: 'left bottom',
-        at: 'left bottom',
-        of: '#app-container',
-        offset: '16 -16',
-      },
-      minWidth: null,
-      width: 320 * 0.7,
-    },
-    'info',
-    1000,
-  );
-}
-
 export default App;
-
