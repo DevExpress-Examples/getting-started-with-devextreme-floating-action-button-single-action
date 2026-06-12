@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import notify from 'devextreme/ui/notify';
 import config from 'devextreme/core/config';
 
@@ -19,6 +19,7 @@ import { DxSpeedDialActionModule } from 'devextreme-angular/ui/speed-dial-action
     selector: 'app-root',
     imports: [DxSpeedDialActionModule],
     templateUrl: './app.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
